@@ -1,5 +1,6 @@
 import { useState } from "react";
 import css from './Searchbar.module.css'
+import PropTypes from 'prop-types';
 
 const Searchbar = ({showImage}) => {
 const [name, setName] = useState('')
@@ -10,10 +11,6 @@ const handleChange = event => {
 
 const handleSubmit = event => {
     event.preventDefault();
-      if (name.trim() === '') {
-            alert('Enter the name picture');
-            return;
-        }
     showImage(name);
     setName('');
 }
@@ -39,5 +36,10 @@ return (
         </form>
     </header>)
 }
+
+Searchbar.propTypes = {  
+  showImage: PropTypes.func.isRequired,
+};
+
 export default Searchbar
   

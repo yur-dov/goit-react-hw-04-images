@@ -1,6 +1,7 @@
 import css from './Modal.module.css';
 import React from "react-dom";
-import {useEffect} from "react";
+import { useEffect } from "react";
+import PropTypes from 'prop-types';
 
 const Modal = ({onCloseModal, largeImageURL, tag}) => {
 
@@ -28,4 +29,11 @@ if (event.code === 'Escape') {
         </div>
     )
 }
+
+Modal.propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
+};
+
 export default Modal
