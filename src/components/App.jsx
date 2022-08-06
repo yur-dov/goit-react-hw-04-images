@@ -12,7 +12,7 @@ const App=() => {
   const [largeImageURL, setLargeImageURL] = useState('');
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(0);
-  const [error, setError] = useState(null);
+  
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -32,7 +32,7 @@ const App=() => {
         setImages(prevState => [...prevState, ...response.hits]);
         setLoading(false);
       })
-      .catch(error => setError(error));
+      .catch(error => console.log(error));
   }, [name, page]);  
  
 
