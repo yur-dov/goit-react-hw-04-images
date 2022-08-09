@@ -68,7 +68,7 @@ return (
     {loading &&
       <Loader />}
 
-    {images.length !== 0 &&
+    {images.length >= 12 &&
       <Button onClick={loadMore}/>} 
 
     {showModal &&
